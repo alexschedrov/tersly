@@ -1,6 +1,6 @@
 //
 //  AnalyticsView.swift
-//  transmute
+//  tersly
 //
 
 import SwiftUI

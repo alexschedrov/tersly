@@ -1,6 +1,6 @@
 //
 //  ShortcutRecorderView.swift
-//  transmute
+//  tersly
 //
 
 import SwiftUI

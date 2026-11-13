@@ -1,6 +1,6 @@
 //
 //  AnalyticsService.swift
-//  transmute
+//  tersly
 //
 
 import Foundation
@@ -16,7 +16,7 @@ final class AnalyticsService: ObservableObject {
     private init() {
         let support = FileManager.default
             .urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
-        let dir = support.appendingPathComponent("transmute")
+        let dir = support.appendingPathComponent("tersly")
         try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
         fileURL = dir.appendingPathComponent("analytics.json")
         load()

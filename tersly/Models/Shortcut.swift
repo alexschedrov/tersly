@@ -1,6 +1,6 @@
 //
 //  Shortcut.swift
-//  transmute
+//  tersly
 //
 
 import Cocoa
@@ -10,7 +10,7 @@ struct Shortcut: Equatable {
     var modifiers: CGEventFlags
     var keyLabel: String
 
-    // ⌥⇧T for "Transmute"
+    // ⌥⇧T for "Tersly"
     static let `default` = Shortcut(keyCode: 0x11, modifiers: [.maskAlternate, .maskShift], keyLabel: "T")
 
     var displayString: String {

@@ -1,6 +1,6 @@
 //
 //  AccessibilityService.swift
-//  transmute
+//  tersly
 //
 //  Created by Alex Schedrov on 2/17/26.
 //

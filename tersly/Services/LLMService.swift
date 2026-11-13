@@ -1,6 +1,6 @@
 //
 //  LLMService.swift
-//  transmute
+//  tersly
 //
 //  Created by Alex Schedrov on 2/17/26.
 //
@@ -32,7 +32,7 @@ class LLMService {
 
     func process(text: String, prompt: String) async -> String {
         guard !provider.requiresAPIKey || !apiKey.isEmpty else {
-            return "[Set your \(provider.displayName) API key in Transmute settings]"
+            return "[Set your \(provider.displayName) API key in Tersly settings]"
         }
 
         let systemPrompt = buildSystemPrompt(actionPrompt: prompt)

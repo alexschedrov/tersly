@@ -1,6 +1,6 @@
 //
 //  SettingsView.swift
-//  transmute
+//  tersly
 //
 //  Created by Alex Schedrov on 2/17/26.
 //
@@ -32,7 +32,7 @@ struct SettingsView: View {
     }
 
     private func isSettingsWindow(_ window: NSWindow) -> Bool {
-        window.title.contains("Settings") || window.title.contains("Transmute")
+        window.title.contains("Settings") || window.title.contains("Tersly")
     }
 
     private func showInDock() {

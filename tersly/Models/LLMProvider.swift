@@ -1,6 +1,6 @@
 //
 //  LLMProvider.swift
-//  transmute
+//  tersly
 //
 //  Created by Alex Schedrov on 3/31/26.
 //

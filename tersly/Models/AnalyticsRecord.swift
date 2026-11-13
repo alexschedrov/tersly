@@ -1,6 +1,6 @@
 //
 //  AnalyticsRecord.swift
-//  transmute
+//  tersly
 //
 
 import Foundation

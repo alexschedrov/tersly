@@ -1,6 +1,6 @@
 //
-//  TransmutePanel.swift
-//  transmute
+//  TerslyPanel.swift
+//  tersly
 //
 //  Created by Alex Schedrov on 2/17/26.
 //
@@ -39,7 +39,7 @@ final class KeyablePanel: NSPanel {
     override var canBecomeKey: Bool { true }
 }
 
-class TransmutePanel {
+class TerslyPanel {
     private static var panel: NSPanel?
     private static var mouseMonitor: Any?
     private static var keyTap: CFMachPort?
@@ -104,7 +104,7 @@ class TransmutePanel {
             guard !trimmed.isEmpty else { return }
             let wrapped = "Apply the following instruction to the input: \(trimmed)"
             let custom = TextAction(name: "Custom", icon: "wand.and.stars", prompt: wrapped)
-            startProcessing(label: "Transmuting", text: text, action: custom)
+            startProcessing(label: "Rewriting", text: text, action: custom)
         }
 
         let view = PanelContentView(
@@ -153,14 +153,14 @@ class TransmutePanel {
             eventsOfInterest: mask,
             callback: { _, type, event, _ in
                 if type == .tapDisabledByTimeout || type == .tapDisabledByUserInput {
-                    if let tap = TransmutePanel.keyTap { CGEvent.tapEnable(tap: tap, enable: true) }
+                    if let tap = TerslyPanel.keyTap { CGEvent.tapEnable(tap: tap, enable: true) }
                     return Unmanaged.passRetained(event)
                 }
                 let keyCode = UInt16(event.getIntegerValueField(.keyboardEventKeycode))
 
                 // Escape always dismisses, in any mode.
                 if keyCode == 0x35 {
-                    DispatchQueue.main.async { TransmutePanel.dismiss() }
+                    DispatchQueue.main.async { TerslyPanel.dismiss() }
                     return nil
                 }
 
@@ -168,7 +168,7 @@ class TransmutePanel {
                 // don't swallow anything else (arrows move caret, Return submits
                 // via SwiftUI's onSubmit, typing fills the field). While
                 // processing there's no list to navigate either.
-                if TransmutePanel.state?.mode == .customInput || TransmutePanel.state?.mode == .processing {
+                if TerslyPanel.state?.mode == .customInput || TerslyPanel.state?.mode == .processing {
                     return Unmanaged.passRetained(event)
                 }
 
@@ -176,13 +176,13 @@ class TransmutePanel {
                 // return don't leak into the source app underneath.
                 switch keyCode {
                 case 0x7E: // Up arrow
-                    DispatchQueue.main.async { TransmutePanel.state?.moveUp() }
+                    DispatchQueue.main.async { TerslyPanel.state?.moveUp() }
                     return nil
                 case 0x7D: // Down arrow
-                    DispatchQueue.main.async { TransmutePanel.state?.moveDown() }
+                    DispatchQueue.main.async { TerslyPanel.state?.moveDown() }
                     return nil
                 case 0x24, 0x4C: // Return, keypad Enter
-                    DispatchQueue.main.async { TransmutePanel.onActivate?() }
+                    DispatchQueue.main.async { TerslyPanel.onActivate?() }
                     return nil
                 default:
                     return Unmanaged.passRetained(event)
@@ -268,7 +268,7 @@ struct PanelContentView: View {
                 SiriBorderView()
             }
         }
-        // Keyboard navigation is handled by the CGEvent tap in TransmutePanel,
+        // Keyboard navigation is handled by the CGEvent tap in TerslyPanel,
         // so SwiftUI/AppKit focus rings on Buttons would just clash with our
         // own highlight. Kill them for the whole panel.
         .focusEffectDisabled()

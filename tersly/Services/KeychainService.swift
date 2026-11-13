@@ -1,6 +1,6 @@
 //
 //  KeychainService.swift
-//  transmute
+//  tersly
 //
 
 import Foundation
@@ -9,8 +9,8 @@ import os
 
 /// Stores API keys in the macOS Keychain instead of plaintext UserDefaults.
 enum KeychainService {
-    private static let service = "com.transmute.apikeys"
-    private static let logger = Logger(subsystem: "com.transmute", category: "KeychainService")
+    private static let service = "com.as.tersly.apikeys"
+    private static let logger = Logger(subsystem: "com.as.tersly", category: "KeychainService")
 
     static func save(_ value: String, account: String) {
         let data = Data(value.utf8)

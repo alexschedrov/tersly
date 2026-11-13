@@ -1,6 +1,6 @@
 //
-//  transmuteApp.swift
-//  transmute
+//  TerslyApp.swift
+//  tersly
 //
 //  Created by Alex Schedrov on 2/17/26.
 //
@@ -8,11 +8,11 @@
 import SwiftUI
 
 @main
-struct transmuteApp: App {
+struct TerslyApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {
-        MenuBarExtra("Transmute", image: "MenuBarIcon") {
+        MenuBarExtra("Tersly", image: "MenuBarIcon") {
             Button("Analytics…") {
                 appDelegate.openAnalyticsWindow()
             }
@@ -22,7 +22,7 @@ struct transmuteApp: App {
             }
             .keyboardShortcut(",")
             Divider()
-            Button("Quit Transmute") {
+            Button("Quit Tersly") {
                 NSApplication.shared.terminate(nil)
             }
             .keyboardShortcut("q")
@@ -44,7 +44,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         AccessibilityService.promptIfNeeded()
 
         hotkeyService = HotkeyService(shortcut: UserDefaults.standard.hotkeyShortcut) {
-            TransmutePanel.show()
+            TerslyPanel.show()
         }
         hotkeyService.register()
 
@@ -65,7 +65,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         }
         let controller = NSHostingController(rootView: AnalyticsView())
         let window = NSWindow(contentViewController: controller)
-        window.title = "Transmute Analytics"
+        window.title = "Tersly Analytics"
         window.styleMask = [.titled, .closable, .miniaturizable, .resizable]
         window.isReleasedWhenClosed = false
         window.center()

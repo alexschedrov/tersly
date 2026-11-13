@@ -1,6 +1,6 @@
 # Contributor License Agreement
 
-Thanks for your interest in contributing to Transmute (the "Project"), maintained by Alex Schedrov (the "Owner").
+Thanks for your interest in contributing to Tersly (the "Project"), maintained by Alex Schedrov (the "Owner").
 
 By submitting a contribution (a pull request, patch, issue with code, or any other change) to the Project, you agree to the terms below.
 
