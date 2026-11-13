@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AD2923152F452D9C00EC7529"
-               BuildableName = "transmute.app"
-               BlueprintName = "transmute"
-               ReferencedContainer = "container:transmute.xcodeproj">
+               BuildableName = "tersly.app"
+               BlueprintName = "tersly"
+               ReferencedContainer = "container:tersly.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AD2923152F452D9C00EC7529"
-            BuildableName = "transmute.app"
-            BlueprintName = "transmute"
-            ReferencedContainer = "container:transmute.xcodeproj">
+            BuildableName = "tersly.app"
+            BlueprintName = "tersly"
+            ReferencedContainer = "container:tersly.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "AD2923152F452D9C00EC7529"
-            BuildableName = "transmute.app"
-            BlueprintName = "transmute"
-            ReferencedContainer = "container:transmute.xcodeproj">
+            BuildableName = "tersly.app"
+            BlueprintName = "tersly"
+            ReferencedContainer = "container:tersly.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
